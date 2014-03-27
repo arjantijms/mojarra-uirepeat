@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+    <body>
+    
+        <h:form>
+            <ui:repeat var="object" value="#{myBean.objects}">
+    
+                <h:panelGroup rendered="#{object.class.name eq 'test.TypeA'}">
+                    <h:inputText value="#{object.a}" />
+                </h:panelGroup>
+                
+                <h:panelGroup rendered="#{object.class.name eq 'test.TypeB'}">
+                    <h:inputText value="#{object.b}" />
+                </h:panelGroup>
+    
+            </ui:repeat>
+            
+            <br/>
+    
+            <h:commandButton value="submit" action="#{myBean.action}" />
+        </h:form>
+    
+    </body>
+
+</html>
